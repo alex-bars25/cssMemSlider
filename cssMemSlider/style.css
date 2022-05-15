@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #4d4d4d;
+}
+.wrapper {
+  margin: 5vh auto;
+  width: 80vw;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+input {
+  display: none;
+}
+.images {
+  display: flex;
+  width: 400%;
+}
+.image {
+  min-width: 100%;
+  transition: all .5s ease;
+}
+.image img {
+  width: 100%;
+  display: block;
+  border-radius: .5rem;
+}
+.caption {
+  display: flex;
+  width: 70%;
+  overflow: hidden;
+  align-items: center;
+}
+.text {
+  min-width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: .1em .1em .1em #000 ;
+  transition: all .5s ease;
+}
+.controls {
+  display: flex;
+  margin: 1em 0;
+}
+.bar {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bar div {
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background: #436be0;
+  border: #436be0 solid .15em;
+}
+.bar:hover div {
+  background: #fff;
+  border: #fff solid .15em;
+}
+.bar:hover {
+  cursor: pointer;
+}
+#s1:checked ~ .controls .bar:nth-child(1) div,
+#s2:checked ~ .controls .bar:nth-child(2) div,
+#s3:checked ~ .controls .bar:nth-child(3) div,
+#s4:checked ~ .controls .bar:nth-child(4) div {
+background: none;
+}
+#s1:checked ~ .images .image:first-child,
+#s1:checked ~ .caption .text:first-child {
+  margin-left: 0%;
+}
+#s2:checked ~ .images .image:first-child,
+#s2:checked ~ .caption .text:first-child {
+  margin-left: -100%;
+}
+#s3:checked ~ .images .image:first-child,
+#s3:checked ~ .caption .text:first-child {
+  margin-left: -200%;
+}
+#s4:checked ~ .images .image:first-child,
+#s4:checked ~ .caption .text:first-child {
+  margin-left: -300%;
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 65em;
+  }  
+}
+@media (max-width: 550px) {
+  .wrapper {
+    width: 95vw;
+  }
+  .caption {
+    width: 100%;
+    order: 1;
+  } 
+  .controls {
+    margin: .5em auto;
+  }     
+}
