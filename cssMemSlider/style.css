@@ -94,3 +94,20 @@ background: none;
 #s4:checked ~ .caption .text:first-child {
   margin-left: -300%;
 }
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 1000px;
+  }  
+}
+@media (max-width: 600px) {
+  .wrapper {
+    width: 95vw;
+  }
+  .caption {
+    width: 100%;
+    order: 1;
+  } 
+  .controls {
+    margin: .5em auto;
+  }     
+}
